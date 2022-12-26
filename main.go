@@ -11,7 +11,7 @@ import (
 
 // RootHandler is mapping "/"
 func RootHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hola123")
+	fmt.Fprintf(w, "hola1234")
 }
 
 // GetSampleHandler is mapping "/sample"
