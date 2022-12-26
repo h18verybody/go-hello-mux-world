@@ -52,7 +52,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd calendar-front.app
-            docker rmi --force docker.kosipov.ru/h18verybody/go-hello-mux-world
             docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }} ${{ env.REGISTRY }}
             docker ps -q --filter "name=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}" | grep -q . && docker stop ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            docker rmi --force docker.kosipov.ru/h18verybody/go-hello-mux-world
             docker run -d --rm -p 50007:8000 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
