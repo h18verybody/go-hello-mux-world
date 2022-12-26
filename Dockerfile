@@ -7,6 +7,6 @@ RUN go mod init mod
 RUN go mod tidy
 RUN go build -o main main.go
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ./main
